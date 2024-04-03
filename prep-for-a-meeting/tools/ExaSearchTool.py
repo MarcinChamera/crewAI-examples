@@ -1,6 +1,7 @@
 import os
 from exa_py import Exa
 from langchain.agents import tool
+from typing import List
 
 class ExaSearchTool:
 	@tool
@@ -16,7 +17,7 @@ class ExaSearchTool:
 		return ExaSearchTool._exa().find_similar(url, num_results=3)
 
 	@tool
-	def get_contents(ids: str):
+	def get_contents(ids: List[str]):
 		"""Get the contents of a webpage.
 		The ids must be passed in as a list, a list of ids returned from `search`.
 		"""
